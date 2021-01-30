@@ -15,14 +15,24 @@
             <h5 class="text-center">A trusted bank in the whole world..</h3>
                 <div class="submit-area">
                     <h4>Sign Up</h4>
-                    <input type="text" class="form-control" placeholder="enter your email">
+                    <input type="text" class="form-control" placeholder="enter your email" required>
                     <br>
-                    <input type="password" class="form-control"  placeholder="enter your password">
+                    <input type="password" class="form-control"  placeholder="enter your password" required>
                     <br>
-                    <button class="btn btn-danger">Login</button>
+                    <span ><a href="#">Forget password?</a></span>
+                    <br>
+                    <br>
+                    <button id="login" class="btn btn-danger">Login</button>
                 </div>
         </div>
-    
+
+        <script>
+            const loginBtn = document.getElementById("login");
+            loginBtn.addEventListener("click", function(){
+                const loginArea = document.getElementById("login-area");
+                loginArea.style.display = "none";
+            })
+        </script>
 
 
 
