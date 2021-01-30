@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!--Login area -->
         <div id="login-area">
             <h1 class="text-center">Welcome to JoduBank</h1>
             <h5 class="text-center">A trusted bank in the whole world..</h3>
@@ -25,13 +26,99 @@
                     <button id="login" class="btn btn-danger">Login</button>
                 </div>
         </div>
+        <!---Transaction area -->
+        <div id="transaction-area">
+            <h1 class="text-center">Welcome User! You have successfully logged in!</h1>
+            <h2 class="text-center">Transaction Area</h2>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="deposit status">
+                        <h5>Deposit</h5>
+                        <h2><span id="currentDeposit">00</span>৳</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="withdraw status">
+                        <h5>Withdraw</h5>
+                    <h2>00৳</h2>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="balance status">
+                        <h5>Balance</h5>
+                    <h2>50000৳</h2>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="submit-area">
+                    <h4>Deposit</h4>
+                    <input id="depositAmount" type="text" class="form-control" placeholder="আপনার ডিপোজিট পরিমাণ লিখুন ৳">
+                    <br>
+                    <button id="addDeposit" class="btn btn-success">Deposit</button>
+                    </div>   
+                </div>
+                <div class="col-md-6">
+                    <div class="submit-area">
+                    <h4>Withdraw</h4>
+                    <input type="text" class="form-control" placeholder="আপনার প্রত্যাহারের পরিমাণ লিখুন ৳">
+                    <br>
+                    <button id="" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <script>
-            const loginBtn = document.getElementById("login");
-            loginBtn.addEventListener("click", function(){
+            // login button event handle
+                const loginBtn = document.getElementById("login");
+                loginBtn.addEventListener("click", function(){
                 const loginArea = document.getElementById("login-area");
                 loginArea.style.display = "none";
+                const transactionArea = document.getElementById("transaction-area");
+                transactionArea.style.display = "block";
+                const transactionAreana = document.getElementById("transaction-areana");
+                
             })
+
+                                                             //transaction button event handle
+                //deposit site work
+                const depositBtn = document.getElementById("addDeposit");
+                depositBtn.addEventListener("click", function() {
+                    const depositAmount = document.getElementById("depositAmount").value;
+                    const depositNumber = parseFloat(depositAmount);
+
+                    const currentDeposit = document.getElementById("currentDeposit").innerText;
+                    const currentDepositNumber = parseFloat(currentDeposit);
+                    const totalDeposit = depositNumber + currentDepositNumber;
+                    console.log(totalDeposit);
+
+                    document.getElementById("currentDeposit").innerText = totalDeposit;
+                    document.getElementById("depositAmount").value = "";
+                })
+
         </script>
 
 
